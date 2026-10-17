@@ -1,0 +1,5 @@
+[pre-start]
+copy = "wt step copy-ignored"
+
+[pre-remove]
+derived-data = "sh $HOME/.local/bin/clean-derived-data.sh {{ worktree_path }}"

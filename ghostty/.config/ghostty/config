@@ -1,0 +1,19 @@
+font-family = "MesloLGS Nerd Font Mono"
+font-size = 14
+
+theme = "Builtin Pastel Dark"
+#theme = "Cursor Dark"
+background-opacity = 0.8
+background-blur-radius = 20
+
+macos-titlebar-style = transparent
+
+# Window Padding
+window-padding-x = 12
+window-padding-y = 8
+window-padding-balance = true
+
+# Mouse & Focus Behavior
+mouse-hide-while-typing = true
+unfocused-split-opacity = 0.6
+

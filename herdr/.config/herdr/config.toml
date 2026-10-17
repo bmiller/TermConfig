@@ -1,0 +1,63 @@
+onboarding = false
+
+[theme]
+name = "terminal"
+auto_switch = false
+
+# Override herdr's built-in "new worktree" key (prefix+shift+g) with worktrunk's
+# default-branch switch/create picker:
+[[keys.command]]
+key = "prefix+shift+w"
+type = "plugin_action"
+command = "worktrunk.open"
+description = "Worktree: switch / create from default branch"
+
+# Optional: bind current-branch creation separately.
+[[keys.command]]
+key = "prefix+shift+c"
+type = "plugin_action"
+command = "worktrunk.open-current"
+description = "Worktree: switch / create from current branch"
+
+# Optional: include remote-tracking branches for this picker.
+[[keys.command]]
+key = "prefix+shift+r"
+type = "plugin_action"
+command = "worktrunk.open-with-remotes"
+description = "Worktree: switch / create from local or remote branches"
+
+[[keys.command]]
+key = "prefix+shift+d"
+type = "plugin_action"
+command = "worktrunk.remove"
+description = "Worktree: remove"
+
+[[keys.command]]
+key = "prefix+shift+m"
+type = "plugin_action"
+command = "worktrunk.merge"
+description = "Worktree: merge into the target branch"
+
+# lazygit
+[[keys.command]]              # lazygit: open in a split
+key = "prefix+g"
+type = "plugin_action"
+command = "herdr-lazygit.open"
+
+[[keys.command]]              # lazygit: open in its own tab
+key = "prefix+shift+g"
+type = "plugin_action"
+command = "herdr-lazygit.open-tab"
+
+# file viewer
+[[keys.command]]
+key = "prefix+f"
+type = "plugin_action"
+command = "herdr-file-viewer.open-file-viewer"
+description = "open file viewer in split"
+
+[[keys.command]]
+key = "prefix+shift+f"
+type = "plugin_action"
+command = "herdr-file-viewer.open-file-viewer-tab"
+description = "open file viewer in tab"
