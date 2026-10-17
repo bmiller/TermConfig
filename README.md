@@ -1,6 +1,6 @@
 # TermConfig
 
-My terminal setup: the configs for zsh, Ghostty, herdr, worktrunk and git, plus a few helper scripts. Configs are symlinked into `$HOME` with [GNU Stow](https://www.gnu.org/software/stow/), so edits made in place go straight into the repo.
+My terminal setup: the configs for zsh, Ghostty, herdr, worktrunk, git and fresh, plus a few helper scripts. Configs are symlinked into `$HOME` with [GNU Stow](https://www.gnu.org/software/stow/), so edits made in place go straight into the repo.
 
 ## Quick start
 
@@ -40,6 +40,7 @@ My terminal setup: the configs for zsh, Ghostty, herdr, worktrunk and git, plus 
 | `herdr`     | `~/.config/herdr/config.toml`    |
 | `worktrunk` | `~/.config/worktrunk/config.toml`|
 | `git`       | `~/.config/git/ignore`           |
+| `fresh`     | `~/.config/fresh/config.json`    |
 | `scripts`   | `~/.local/bin/*.sh`              |
 
 ### Scripts

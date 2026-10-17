@@ -6,7 +6,7 @@
 set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
-PACKAGES=(zsh ghostty herdr worktrunk git scripts)
+PACKAGES=(zsh ghostty herdr worktrunk git fresh scripts)
 
 if ! command -v brew >/dev/null 2>&1; then
   echo "Error: Homebrew is not installed. See README.md." >&2
