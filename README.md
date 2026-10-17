@@ -13,7 +13,7 @@ My terminal setup: the configs for zsh, Ghostty, herdr, worktrunk and git, plus 
 2. **Clone and install**
 
    ```sh
-   git clone <repo-url> ~/TermConfig
+   git clone https://github.com/bmiller/TermConfig.git ~/TermConfig
    cd ~/TermConfig
    ./install.sh
    ```
