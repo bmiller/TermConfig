@@ -63,6 +63,7 @@ These are installed to `~/.local/bin`, which `.zshrc` puts on your `PATH`.
 | gh | GitHub CLI |
 | jq | Command-line JSON processor |
 | lazygit | Terminal UI for git |
+| fresh (`fresh-editor`) | Terminal text editor |
 | mole | Cleans up files to free disk space |
 | taproom | Terminal UI for Homebrew |
 | worktrunk | Git worktree manager (`wt`) |
@@ -79,6 +80,20 @@ These steps can't go in the Brewfile.
 ```sh
 gh auth login
 ```
+
+### Node.js (via nvm)
+
+The herdr skill install below uses `npx`, so you need a current Node. Install it with [nvm](https://github.com/nvm-sh/nvm). `.zshrc` already loads nvm when it's present.
+
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash
+source ~/.zshrc
+nvm install --lts
+```
+
+> **Old Node already installed?** If `npx` fails with `npm ERR! cb.apply is not a function`, the machine is using an old system npm. Installing nvm and running `nvm install --lts` fixes it.
+>
+> **Check `.zshrc` afterward:** the nvm installer may add its own loading lines to `~/.zshrc`, which is a symlink into this repo. `.zshrc` already has them, so throw the extra lines away with `git -C ~/TermConfig checkout zsh/.zshrc`.
 
 ### herdr
 
