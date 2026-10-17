@@ -68,6 +68,7 @@ These are installed to `~/.local/bin`, which `.zshrc` puts on your `PATH`.
 | worktrunk | Git worktree manager (`wt`) |
 | [herdr](https://herdr.dev) | Terminal multiplexer and agent coordinator |
 | stow | Symlinks the configs in this repo |
+| gitleaks | Scans commits for secrets (pre-commit hook) |
 
 ## Manual setup
 
@@ -108,6 +109,16 @@ herdr plugin install smarzban/herdr-file-viewer
 ```sh
 # ~/.zshrc.local
 export OPENROUTER_API_KEY='...'
+```
+
+### Secret scanning
+
+`install.sh` turns on a pre-commit hook (`.githooks/pre-commit`) that runs [gitleaks](https://github.com/gitleaks/gitleaks) on staged changes. If it finds something that looks like a secret, the commit is blocked. To fix it, move the value into `~/.zshrc.local`. For a false positive, add a `gitleaks:allow` comment on that line.
+
+If you cloned the repo without running `install.sh`, enable the hook yourself:
+
+```sh
+git config core.hooksPath .githooks
 ```
 
 ## Day-to-day

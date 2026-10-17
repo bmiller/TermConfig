@@ -21,5 +21,6 @@ brew "taproom"
 brew "worktrunk"
 brew "herdr"
 
-# Dotfile management
+# Dotfile management + secret scanning
 brew "stow"
+brew "gitleaks"

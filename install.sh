@@ -19,4 +19,7 @@ brew bundle --file="$REPO_DIR/Brewfile"
 echo "Symlinking configs..."
 stow --no-folding --dir="$REPO_DIR" --target="$HOME" --restow "${PACKAGES[@]}"
 
+echo "Enabling git hooks (gitleaks secret scan)..."
+git -C "$REPO_DIR" config core.hooksPath .githooks
+
 echo "Done. Open a new shell or run: source ~/.zshrc"
