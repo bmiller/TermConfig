@@ -39,7 +39,8 @@ My terminal setup: the configs for zsh, Ghostty, herdr, worktrunk, git and fresh
 | `ghostty`   | `~/.config/ghostty/config`       |
 | `herdr`     | `~/.config/herdr/config.toml`, plus plugin configs under `~/.config/herdr/plugins/config/` (`herdr-file-viewer/config.toml`, `herdr-lazygit/lazygit-user.yml`) |
 | `worktrunk` | `~/.config/worktrunk/config.toml`|
-| `git`       | `~/.config/git/ignore`           |
+| `git`       | `~/.config/git/config` (shared settings) and `~/.config/git/ignore` |
+| `lazygit`   | `~/Library/Application Support/lazygit/config.yml` (standalone lazygit; inside herdr it uses `lazygit-user.yml`) |
 | `fresh`     | `~/.config/fresh/config.json`    |
 | `gh`        | `~/.config/gh/config.yml` (settings and aliases; the auth token in `hosts.yml` is not tracked) |
 | `scripts`   | `~/.local/bin/*.sh`              |
@@ -65,6 +66,7 @@ These are installed to `~/.local/bin`, which `.zshrc` puts on your `PATH`.
 | gh | GitHub CLI |
 | jq | Command-line JSON processor |
 | lazygit | Terminal UI for git |
+| delta (`git-delta`) | Syntax-highlighted diffs for `git diff`, lazygit and herdr-file-viewer |
 | fresh (`fresh-editor`) | Terminal text editor; set as `$EDITOR` in `.zshrc` |
 | mole | Cleans up files to free disk space |
 | taproom | Terminal UI for Homebrew |
@@ -113,6 +115,17 @@ npx skills add herdrdev/herdr --skill herdr -g
 # ~/.zshrc.local
 export OPENROUTER_API_KEY='...'
 ```
+
+### Git identity
+
+Shared git settings are tracked in `~/.config/git/config`. Your name and email go in `~/.gitconfig`, which isn't tracked, so each machine (or teammate) sets their own. Git reads both files automatically.
+
+```sh
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
+Don't set `core.excludesfile`. If it's set, git ignores `~/.config/git/ignore`.
 
 ### Secret scanning
 

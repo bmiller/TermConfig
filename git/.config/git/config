@@ -1,0 +1,25 @@
+# Shared git settings (tracked in TermConfig).
+# Per-machine identity lives in ~/.gitconfig (untracked), which git also reads.
+
+[core]
+	quotepath = false
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true             # n/N jump between files in `git diff`
+[merge]
+	conflictStyle = zdiff3      # conflict markers also show the original (base) code
+[diff]
+	algorithm = histogram       # cleaner diffs when code moves around
+	colorMoved = default        # moved lines are colored differently from real changes
+[rerere]
+	enabled = true              # remember conflict resolutions and reapply them
+[fetch]
+	prune = true
+[push]
+	autoSetupRemote = true      # first push of a new branch sets its upstream
+[init]
+	defaultBranch = main
+[branch]
+	sort = -committerdate       # most recently used branches first

@@ -7,7 +7,7 @@
 set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
-PACKAGES=(zsh ghostty herdr worktrunk git fresh gh scripts)
+PACKAGES=(zsh ghostty herdr worktrunk git fresh gh lazygit scripts)
 HERDR_INTEGRATIONS=(claude)
 HERDR_PLUGINS=(
   crokily/herdr-lazygit
