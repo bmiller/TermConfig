@@ -1,0 +1,6 @@
+# herdr-file-viewer config. All options: see config.example.toml in the plugin's repo
+# (github.com/smarzban/herdr-file-viewer).
+
+# Editor launched by the `e` key. Set here rather than relying on $EDITOR,
+# which the viewer reads from the herdr server's environment, not your shell.
+editor = "fresh"

@@ -37,7 +37,7 @@ My terminal setup: the configs for zsh, Ghostty, herdr, worktrunk, git and fresh
 | ----------- | -------------------------------- |
 | `zsh`       | `~/.zshrc`                       |
 | `ghostty`   | `~/.config/ghostty/config`       |
-| `herdr`     | `~/.config/herdr/config.toml`    |
+| `herdr`     | `~/.config/herdr/config.toml` and `~/.config/herdr/plugins/config/herdr-file-viewer/config.toml` |
 | `worktrunk` | `~/.config/worktrunk/config.toml`|
 | `git`       | `~/.config/git/ignore`           |
 | `fresh`     | `~/.config/fresh/config.json`    |
