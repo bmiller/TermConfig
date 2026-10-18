@@ -2,6 +2,10 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH=/opt/homebrew/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/bin:/usr/local/opt/python/libexec/bin:/usr/local/sbin:/opt/local/bin:/usr/local/bin/checker:/usr/local/lib/python3.7/site-packages/ffprobe
 export PATH="$HOME/.local/bin:$PATH"
 
+# Default editor (used by git, lazygit, and herdr-file-viewer's `e` key)
+export EDITOR="fresh"
+export VISUAL="fresh"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

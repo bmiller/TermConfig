@@ -64,7 +64,7 @@ These are installed to `~/.local/bin`, which `.zshrc` puts on your `PATH`.
 | gh | GitHub CLI |
 | jq | Command-line JSON processor |
 | lazygit | Terminal UI for git |
-| fresh (`fresh-editor`) | Terminal text editor |
+| fresh (`fresh-editor`) | Terminal text editor; set as `$EDITOR` in `.zshrc` |
 | mole | Cleans up files to free disk space |
 | taproom | Terminal UI for Homebrew |
 | worktrunk | Git worktree manager (`wt`) |
