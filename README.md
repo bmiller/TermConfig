@@ -35,7 +35,7 @@ My terminal setup: the configs for zsh, Ghostty, herdr, worktrunk, git and fresh
 
 | Package     | Links to                         |
 | ----------- | -------------------------------- |
-| `zsh`       | `~/.zshrc`                       |
+| `zsh`       | `~/.zshrc`, `~/.zprofile`         |
 | `ghostty`   | `~/.config/ghostty/config`       |
 | `herdr`     | `~/.config/herdr/config.toml`, plus plugin configs under `~/.config/herdr/plugins/config/` (`herdr-file-viewer/config.toml`, `herdr-lazygit/lazygit-user.yml`) |
 | `worktrunk` | `~/.config/worktrunk/config.toml`|
