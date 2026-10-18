@@ -18,7 +18,7 @@ My terminal setup: the configs for zsh, Ghostty, herdr, worktrunk, git and fresh
    ./install.sh
    ```
 
-   This runs `brew bundle` on the [`Brewfile`](Brewfile) and then stows every config package into `$HOME`.
+   This runs `brew bundle` on the [`Brewfile`](Brewfile), stows every config package into `$HOME`, turns on the secret-scanning git hook, and installs the herdr integration and plugins. It skips anything that's already done, so it's safe to re-run.
 
 3. **Finish the [manual setup](#manual-setup)** below, then reload:
 
@@ -37,10 +37,11 @@ My terminal setup: the configs for zsh, Ghostty, herdr, worktrunk, git and fresh
 | ----------- | -------------------------------- |
 | `zsh`       | `~/.zshrc`                       |
 | `ghostty`   | `~/.config/ghostty/config`       |
-| `herdr`     | `~/.config/herdr/config.toml` and `~/.config/herdr/plugins/config/herdr-file-viewer/config.toml` |
+| `herdr`     | `~/.config/herdr/config.toml`, plus plugin configs under `~/.config/herdr/plugins/config/` (`herdr-file-viewer/config.toml`, `herdr-lazygit/lazygit-user.yml`) |
 | `worktrunk` | `~/.config/worktrunk/config.toml`|
 | `git`       | `~/.config/git/ignore`           |
 | `fresh`     | `~/.config/fresh/config.json`    |
+| `gh`        | `~/.config/gh/config.yml` (settings and aliases; the auth token in `hosts.yml` is not tracked) |
 | `scripts`   | `~/.local/bin/*.sh`              |
 
 ### Scripts
@@ -60,7 +61,7 @@ These are installed to `~/.local/bin`, which `.zshrc` puts on your `PATH`.
 | eza | A better `ls` (aliased to `ls`) |
 | zoxide | A better `cd` that remembers directories you've visited; jump back with part of the name |
 | bat | `cat` with syntax highlighting |
-| fzf | Interactive fuzzy picker |
+| fzf | Interactive fuzzy picker. In the shell: `Ctrl-R` searches history, `Ctrl-T` inserts a file path, `Alt-C` jumps into a directory |
 | gh | GitHub CLI |
 | jq | Command-line JSON processor |
 | lazygit | Terminal UI for git |
@@ -74,7 +75,7 @@ These are installed to `~/.local/bin`, which `.zshrc` puts on your `PATH`.
 
 ## Manual setup
 
-These steps can't go in the Brewfile.
+These steps aren't handled by `install.sh`.
 
 ### GitHub CLI
 
@@ -96,26 +97,12 @@ nvm install --lts
 >
 > **Check `.zshrc` afterward:** the nvm installer may add its own loading lines to `~/.zshrc`, which is a symlink into this repo. `.zshrc` already has them, so throw the extra lines away with `git -C ~/TermConfig checkout zsh/.zshrc`.
 
-### herdr
+### herdr agent skill
 
-Install the Claude integration ([docs](https://herdr.dev/docs/integrations/)):
-
-```sh
-herdr integration install claude
-```
-
-Install the agent skill:
+`install.sh` already installs the Claude [integration](https://herdr.dev/docs/integrations/) and the plugins (listed in `HERDR_INTEGRATIONS` and `HERDR_PLUGINS`). The agent skill needs Node, so install it once nvm is set up:
 
 ```sh
 npx skills add herdrdev/herdr --skill herdr -g
-```
-
-Install the plugins (the keybindings in `config.toml` depend on them):
-
-```sh
-herdr plugin install crokily/herdr-lazygit
-herdr plugin install devashish2203/herdr-worktrunk
-herdr plugin install smarzban/herdr-file-viewer
 ```
 
 ### Machine-specific settings and secrets
@@ -144,5 +131,6 @@ git config core.hooksPath .githooks
 - **New package or new file in a package:** re-run `./install.sh`, or `stow --no-folding -t ~ <package>`.
 - **Adding a new config:** mirror its path under a new package folder (for example `foo/.config/foo/config`), add the package to `PACKAGES` in `install.sh`, and run it.
 - **Adding a Homebrew tool:** add it to the `Brewfile`, then run `brew bundle`.
+- **Adding a herdr plugin or integration:** add it to `HERDR_PLUGINS` or `HERDR_INTEGRATIONS` in `install.sh`, then re-run it.
 
 Always use `--no-folding` with stow. Without it, Stow may symlink a whole directory like `~/.config/herdr`, and then herdr's logs, sockets and session files would end up inside the repo.
