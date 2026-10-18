@@ -1,5 +1,5 @@
 # ---- PATH ----
-eval "$(/opt/homebrew/bin/brew shellenv)"   # Homebrew bin/sbin, plus its completions in fpath
+# Homebrew is set up in .zshenv (all shells) and .zprofile (login shells)
 typeset -U path fpath                        # drop duplicate entries
 path=("$HOME/.local/bin" $path)
 
