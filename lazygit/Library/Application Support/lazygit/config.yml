@@ -1,4 +1,4 @@
 # lazygit config (standalone; inside herdr, lazygit uses herdr-lazygit/lazygit-user.yml)
 git:
   diffRenderers:
-    - command: delta --{{colorScheme}} --paging=never
+    - command: delta --dark --paging=never
