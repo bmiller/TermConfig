@@ -1,4 +1,13 @@
-# lazygit config (standalone; inside herdr, lazygit uses herdr-lazygit/lazygit-user.yml)
+# lazygit config. The herdr-lazygit pane also loads this as its base layer
+# (it runs a pinned lazygit 0.65), so keep settings 0.65-compatible.
 git:
   diffRenderers:
     - command: delta --dark --paging=never
+
+customCommands:
+  # Overrides the built-in global <c-p> (custom patch options)
+  - key: '<c-p>'
+    context: 'global'
+    command: 'git pull --no-rebase'
+    description: 'Pull (merge)'
+    loadingText: 'Pulling with merge...'
