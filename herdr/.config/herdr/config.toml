@@ -4,6 +4,33 @@ onboarding = false
 name = "terminal"
 auto_switch = false
 
+[theme.custom]
+# panel_bg = "none"
+surface0 = "#262223"
+surface1 = "#d7d7d7"
+surface_dim = "#b8b8b8"
+active_row_bg = "#262223"
+overlay0 = "#8b8b8b"
+overlay1 = "#565656"
+red = "#a8334c"
+yellow = "#944927"
+blue = "#286486"
+mauve = "#88507d"
+teal = "#3b8992"
+peach = "#944927"
+accent = "#530053"
+
+[ui]
+prompt_new_tab_name = false
+show_agent_labels_on_pane_borders = true
+
+[keys]
+previous_workspace = "ctrl+shift+k"
+next_workspace = "ctrl+shift+j"
+previous_tab = "ctrl+shift+["
+next_tab = "ctrl+shift+]"
+
+
 # Override herdr's built-in "new worktree" key (prefix+shift+g) with worktrunk's
 # default-branch switch/create picker:
 [[keys.command]]
